@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Feather from '@expo/vector-icons/Feather';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function App() {
   return (
@@ -128,11 +130,11 @@ export default function App() {
       <View style={styles.sectionsContainer}>
 
         <View style={styles.section}>
-          <Text>Section 1</Text>
+          <MaterialCommunityIcons name="collage" size={24} color="#F5F5F5" />
         </View>
 
         <View style={styles.section}>
-          <Text>Section 2</Text>
+          <MaterialIcons name="contacts" size={24} color="#F5F5F5" />
         </View>
 
       </View>
@@ -142,15 +144,27 @@ export default function App() {
         <View style={styles.feed}>
 
           <View style={styles.image}>
-            <Text>Image1</Text>
+            <Image
+              style={styles.post}
+              source={require('./assets/images/1.jpg')}
+              resizeMode="cover"
+            />
           </View>
 
           <View style={styles.image}>
-            <Text>Image2</Text>
+            <Image
+              style={styles.post}
+              source={require('./assets/images/2.jpg')}
+              resizeMode="cover"
+            />
           </View>
 
           <View style={styles.image}>
-            <Text>Image3</Text>
+            <Image
+              style={styles.post}
+              source={require('./assets/images/3.jpg')}
+              resizeMode="cover"
+            />
           </View>
 
         </View>
@@ -158,15 +172,27 @@ export default function App() {
         <View style={styles.feed}>
 
           <View style={styles.image}>
-            <Text>Image1</Text>
+            <Image
+              style={styles.post}
+              source={require('./assets/images/4.jpg')}
+              resizeMode="cover"
+            />
           </View>
 
           <View style={styles.image}>
-            <Text>Image2</Text>
+            <Image
+              style={styles.post}
+              source={require('./assets/images/5.jpg')}
+              resizeMode="cover"
+            />
           </View>
 
           <View style={styles.image}>
-            <Text>Image3</Text>
+            <Image
+              style={styles.post}
+              source={require('./assets/images/6.jpg')}
+              resizeMode="cover"
+            />
           </View>
 
         </View>
@@ -327,7 +353,7 @@ const styles = StyleSheet.create({
   },
   section: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -345,6 +371,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  post: {
+    width: '100%',
+    height: '100%',
+
   },
 
 });
