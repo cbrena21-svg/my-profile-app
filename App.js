@@ -84,23 +84,43 @@ export default function App() {
       <View style={styles.storiesContainer}>
 
         <View style={styles.story}>
-          <Text>Story 1</Text>
+          <Image
+            style={styles.storyPhoto}
+            source={require('./assets/images/greece.jpg')}
+            resizeMode="contain"
+          />
         </View>
 
         <View style={styles.story}>
-          <Text>Story 2</Text>
+          <Image
+            style={styles.storyPhoto}
+            source={require('./assets/images/coffee.jpg')}
+            resizeMode="contain"
+          />
         </View>
 
         <View style={styles.story}>
-          <Text>Story 3</Text>
+          <Image
+            style={styles.storyPhoto}
+            source={require('./assets/images/film.jpg')}
+            resizeMode="contain"
+          />
         </View>
 
         <View style={styles.story}>
-          <Text>Story 4</Text>
+          <Image
+            style={styles.storyPhoto}
+            source={require('./assets/images/travels.jpg')}
+            resizeMode="contain"
+          />
         </View>
 
         <View style={styles.story}>
-          <Text>Story 5</Text>
+          <Image
+            style={styles.storyPhoto}
+            source={require('./assets/images/me.jpg')}
+            resizeMode="contain"
+          />
         </View>
 
       </View>
@@ -284,14 +304,21 @@ const styles = StyleSheet.create({
     flex: 2,
     marginLeft: 10,
     flexDirection: 'row',
-    backgroundColor: 'purple',
+    backgroundColor: 'black',
     gap: 10,
   },
   story: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  storyPhoto: {
+    width: 70,
+    height: 70,
+    borderRadius: 50,
+    borderWidth: 4,
+    borderColor: '#5A5A5A',
   },
   sectionsContainer: {
     flex: 1.2,
