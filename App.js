@@ -71,13 +71,13 @@ export default function App() {
 
       <View style={styles.buttonsContainer}>
         <View style={styles.buttonType1}>
-          <Text>Follow</Text>
+          <Text style={styles.buttonText}>Follow</Text>
         </View>
         <View style={styles.buttonType1}>
-          <Text>Message</Text>
+          <Text style={styles.buttonText}>Message</Text>
         </View>
         <View style={styles.buttonType2}>
-          <Text>Discover</Text>
+          <Ionicons name="person-add-outline" size={18} color="#F5F5F5" />
         </View>
       </View>
 
@@ -254,25 +254,31 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 15,
     gap: 10,
-    backgroundColor: 'red',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'black',
   },
   buttonType1: {
     flex: 4,
-    height: '100%',
-    width: '100%',
-    backgroundColor: 'gray',
+    borderWidth: 1,
+    borderColor: '#444',
+    borderRadius: 8,
+    backgroundColor: '#262626',
     alignItems: 'center',
     justifyContent: 'center',
+    marginVertical: 8,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: '600',
   },
   buttonType2: {
     flex: 1,
-    height: '100%',
-    width: '100%',
-    backgroundColor: 'gray',
+    borderWidth: 1,
+    borderColor: '#444',
+    borderRadius: 8,
+    backgroundColor: '#262626',
     alignItems: 'center',
     justifyContent: 'center',
+    marginVertical: 8,
   },
   storiesContainer: {
     flex: 2,
