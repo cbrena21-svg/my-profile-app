@@ -1,10 +1,27 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Feather from '@expo/vector-icons/Feather';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
-export default function App() {
+const App = () => {
+  const [followed, setFollowed] = useState(false);
+  const [numberFollowers, setNumberFollowers] = useState(0);
+  const [buttonText, setButtonText] = useState('Follow');
+
+  const handleFollowAndUnfollow = () => {
+    if (!followed) {
+      setNumberFollowers(numberFollowers + 1);
+      setFollowed(true);
+      setButtonText('Unfollow');
+    } else {
+      setNumberFollowers(numberFollowers - 1);
+      setFollowed(false);
+      setButtonText('Follow');
+    }
+  };
+
   return (
     <View style={styles.container}>
 
@@ -51,7 +68,7 @@ export default function App() {
             </View>
 
             <View style={styles.number}>
-              <Text style={styles.numberText}>932K</Text>
+              <Text style={styles.numberText}>{numberFollowers}</Text>
               <Text style={styles.numberText}>followers</Text>
             </View>
 
@@ -72,9 +89,11 @@ export default function App() {
       </View>
 
       <View style={styles.buttonsContainer}>
-        <View style={styles.buttonType1}>
-          <Text style={styles.buttonText}>Follow</Text>
-        </View>
+
+        <TouchableOpacity onPress={handleFollowAndUnfollow} style={styles.buttonType1}>
+          <Text style={styles.buttonText}>{buttonText}</Text>
+        </TouchableOpacity>
+
         <View style={styles.buttonType1}>
           <Text style={styles.buttonText}>Message</Text>
         </View>
@@ -202,6 +221,7 @@ export default function App() {
     </View >
   );
 }
+export default App;
 
 const styles = StyleSheet.create({
   container: {
